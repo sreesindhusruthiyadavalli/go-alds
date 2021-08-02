@@ -1,6 +1,8 @@
-package main
+package ll
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Node struct{
 	data int
@@ -71,7 +73,7 @@ func (ll *LinkedList) Insert(data int, position int){
 	currentNode.next = existingNextNode
 }
 
-func main(){
+func CheckLl(){
 	llist := new(LinkedList)
 	//node1 := new(Node)
 	//node1.NewNode(3, nil)
