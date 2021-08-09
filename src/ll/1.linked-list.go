@@ -20,6 +20,8 @@ type LinkedList struct{
 
 func (ll *LinkedList) Len() int{
 	count := 0
+	// using a variable here to traverse the data
+	// so that current linked list object remains same.
 	var temp *Node
 	if ll.head == nil{
 		return 0
@@ -39,6 +41,8 @@ func (ll *LinkedList) Print() {
 		fmt.Print("NULL")
 		return
 	}
+	//No Intermediate variable is used so we are traversing on
+	//the actual object created and it's references gets updated on updating ll.head.
 	for ll.head != nil {
 		fmt.Printf("%+v -->",ll.head.data)
 		ll.head = ll.head.next
