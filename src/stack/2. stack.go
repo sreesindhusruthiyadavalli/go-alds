@@ -4,8 +4,10 @@ import (
 	"fmt"
 )
 
-const MaxUint = ^uint(0)
-const MAXSIZE = int(MaxUint >> 1)
+const (
+	MaxUint = ^uint(0)
+	MAXSIZE = int(MaxUint >> 1)
+)
 
 type Stack struct{
 	//top int
@@ -53,7 +55,7 @@ func (s *Stack) Peek() int{
 }
 
 func (s *Stack) isEmpty() bool{
-	return len(s.slice) < 0
+	return len(s.slice) <= 0
 }
 
 func CheckStack(){

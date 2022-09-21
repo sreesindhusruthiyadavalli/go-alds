@@ -16,6 +16,7 @@ func (n *Node) NewNode(data int, next *Node){
 
 type LinkedList struct{
 	head *Node
+	length int
 }
 
 func (ll *LinkedList) Len() int{
@@ -34,6 +35,14 @@ func (ll *LinkedList) Len() int{
 		//fmt.Println(temp)
 	}
 	return count
+}
+
+func (ll *LinkedList) Length() int{
+	return ll.length
+}
+
+func (ll *LinkedList) GetHead() *Node {
+	return ll.head
 }
 
 func (ll *LinkedList) Print() {
@@ -58,12 +67,14 @@ func (ll *LinkedList) Insert(data int, position int){
 	//This inserts new element as linked list is empty
 	if ll.head == nil{
 		ll.head = temp
+		ll.length = ll.length + 1
 		return
 	}
 	//This inserts at beginning of the linked list.
 	if position == 0{
 		temp.next = ll.head
 		ll.head = temp
+		//ll.length = ll.length + 1
 	}
 	for currPosition < position-1 && currentNode != nil {
 		currentNode = currentNode.next
@@ -75,6 +86,7 @@ func (ll *LinkedList) Insert(data int, position int){
 	currentNode.next = temp
 	currentNode = currentNode.next
 	currentNode.next = existingNextNode
+	ll.length = ll.length + 1
 }
 
 func CheckLl(){
@@ -92,13 +104,14 @@ func CheckLl(){
 	////llist.head.next.next = node3
 	////llist.Print()
 	llist.Insert(3, 0)
+	println(llist.Length())
 	llist.Insert(7, 1)
 	llist.Insert(10, 2)
 	//llist.Print()
-	llist.Len()
+	println(llist.Length())
 	llist.Insert(4, 2)
 	llist.Print()
-	llist.Len()
+	println(llist.Length())
 }
 
 

@@ -1,18 +1,24 @@
 package main
 
-import (
+import(
 	//"github.com/sreesindhusruthiyadavalli/go-alds/src/ll"
-	"github.com/sreesindhusruthiyadavalli/go-alds/src/stack"
+	//"github.com/sreesindhusruthiyadavalli/go-alds/src/stack"
+	//"github.com/sreesindhusruthiyadavalli/go-alds/src/queue"
+	"github.com/sreesindhusruthiyadavalli/go-alds/src/exercises"
 )
+
 
 func main(){
 	//ll.CheckLl()
-	stack.CheckStack()
+	//stack.CheckStack()ar
+	//ll.CheckStackWithLl()
+	//queue.CheckQueue()
+	exercises.GetRecords()
 }
 
 /*
 -- go to go-alds/src/app
--- go build
+-- go build && ./app
  */
 
 /*
@@ -44,4 +50,10 @@ sleep 30
 curl http://localhost:8080/debug/pprof/heap > heap.2.pprof
 sleep 30
 curl http://localhost:8080/debug/pprof/heap > heap.3.pprof
+ */
+
+
+/*
+Golang Grpc Interceptors - https://shijuvar.medium.com/writing-grpc-interceptors-in-go-bf3e7671fe48
+Go closures - https://gobyexample.com/closures
  */
